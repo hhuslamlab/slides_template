@@ -1,0 +1,114 @@
+\usepackage{tikz}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath,amssymb}
+
+
+% Logo at frontpage -------------------
+\titlegraphic{
+% \hfill
+
+\parbox[l]{5cm}{\includegraphics[width=5cm]{fig/HHU_Logo.png}}
+\hspace{0.5cm}
+\parbox[c]{4.5cm}{\includegraphics[width=4.5cm]{fig/SLAM_Lower_Banner.png}}
+% \hspace{0.2cm}
+% \parbox[r]{1.5cm}{\includegraphics[width=1.5cm]{fig/uf_logo_vert.pdf}}
+
+
+
+% \hfill
+}
+% Logo at frontpage -------------------
+
+% fonts ----------------
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{AlegreyaSans} %% Option 'black' gives heavier bold face
+%% The 'sfdefault' option to make the base font sans serif
+\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+% fonts ----------------
+
+% Front page figure -----------------------------
+\usebackgroundtemplate{
+\tikz[overlay,remember picture] \node[opacity=0.25, at=(current page.center)] {
+  \includegraphics[height=\paperheight,width=\paperwidth]{fig/hhudiversity.jpg}};
+%   \includegraphics[height=\paperheight,width=\paperwidth]{fig/ulb_front.png}};
+}
+% Front page figure -----------------------------
+
+% LOGO in each slide -----------------------------
+% You can choose logo 
+% logo{\includegraphics[height=1.5cm]{fig/SLAM_Lower_Banner.png}}
+% LOGO in each slide -----------------------------
+
+% set COLORS -----------------------------
+\definecolor{HHUblue}{RGB}{11,56,99} % Pantone 282, Hex #002147, RGB 0 33 71, CMYK 100 80 0 60
+% \definecolor{UForange}{RGB}{250,70,22} % UF ORANGE
+%\useoutertheme[subsection=false]{miniframes} %eliminate subsection header by each slide
+\setbeamercolor{title}{fg=HHUblue}
+\setbeamercolor{frametitle}{fg=HHUblue}
+\usecolortheme[named=UFblue]{structure}
+\mode<presentation>
+{
+  \usetheme[compress]{Dresden}
+\setbeamercolor{upper separation line head}{bg=HHUblue}
+
+  %\setbeamertemplate{navigation symbols}{}
+  %\setbeamertemplate{caption}[numbered]
+} 
+\useoutertheme{miniframes} %colors healine
+\setbeamercolor{section in head/foot}{parent=HHUblue, fg=HHUblue}
+
+\defbeamertemplate*{headline}{miniframes theme no subsection}
+{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+}
+% set COLORS -----------------------------
+
+%gets rid of bottom navigation bars
+\setbeamertemplate{footline}[page number]{}
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{frametitle}{}
+
+
+
+
+%--------------------------------------------------------
+%	NEW ELEMENTS
+%--------------------------------------------------------
+% DECLARE plim operator
+\DeclareMathOperator{\plim}{plim}
+% DECLARE Covariance operator
+\DeclareMathOperator{\Cov}{\mathrm{Cov}}
+% DECLARE Expectation operator
+\DeclareMathOperator{\E}{\mathrm{E}}
+% DECLARE Symbol of Real numbers
+\DeclareMathOperator{\R}{\mathbb{R}}
+% DECLARE Variance operator
+\DeclareMathOperator{\Var}{\mathrm{Var}}
+% DECLARE Asymptotic variance operator
+\DeclareMathOperator{\Avar}{\mathrm{Avar}}
+% DECLARE V of Variance operator
+\DeclareMathOperator{\V}{\mathrm{V}}
+% DECLARE Correlation operator
+\DeclareMathOperator{\Corr}{\mathrm{Corr}}
+% DECLARE Trace operator
+\DeclareMathOperator{\tr}{\mathrm{tr}}
+% DECLARE Normal distribution symbol
+\DeclareMathOperator{\N}{\mathcal{N}}
+% DECLARE "O" operator
+\DeclareMathOperator{\Op}{\mathcal{O}}
+% DECLARE "little o" operator
+\DeclareMathOperator{\op}{\mathrm{o}}
+% DECLARE Rank operator 
+\DeclareMathOperator{\rank}{rank}
+% DECLARE Lagrange symbol
+\DeclareMathOperator{\La}{\mathcal{L}}
