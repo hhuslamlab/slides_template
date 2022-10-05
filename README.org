@@ -1,6 +1,4 @@
 ** Slide template
-
-
-** LICENSE
+LaTeX slide template of the SLAM_LAB at HHU.
 
 
