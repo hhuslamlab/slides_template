@@ -1,0 +1,269 @@
+\documentclass{beamer}
+\usepackage{SLaMLab_HHU_theme}
+
+%\documentclass[handout,gray]{beamer}
+%\usetheme{yale}
+\usepackage{tikz}
+\usepackage{grffile}
+
+\usetikzlibrary{arrows,shapes}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+\tikzstyle{na} = [baseline=-.5ex]
+
+\usepackage[makeroom]{cancel}
+\usepackage{booktabs}
+%\usepackage{fontspec}
+%\setmainfont{Doulos SIL}
+
+\usepackage{microtype}
+
+%\usepackage{xeCJK}
+\usepackage{CJKutf8}
+%\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}
+
+\usepackage{amssymb}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+%%%%%% Some other settings that can make things look nicer
+%%% Set a smaller indent for description environment
+\setbeamersize{description width=2em}
+%%% Remove nav symbols (and shift any logo down to corner)
+\setbeamertemplate{navigation symbols}{\vspace{-2ex}} 
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage{comment}
+
+\usepackage{multimedia}
+\usepackage{media9}
+
+%% Lines to help with generating handouts. Uncomment to activate
+% \setbeamercolor{frametitle}{fg=black}
+% \setbeamercolor{background canvas}{bg=white}
+%%%%%%
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+\usepackage{hyphenat}
+
+\title{TITLE OF TALK}
+%\subtitle{Tackle the forgotten majority}
+\author[shortname]{Kevin Tang\newline
+	\newline\texttt{\footnotesize{kevin.tang@hhu.de}; \footnotesize{\url{slam.phil.hhu.de}}\\ \footnotesize{\url{www.kevintang.org}}}}
+\date{\today}
+\institute[shortinst]{Heinrich Heine University Dusseldorf}
+\AtBeginSection{
+\begin{frame}
+\begin{center}
+\structure{\Huge \insertsection}
+\end{center}
+\end{frame}
+}
+
+% Bibtex options
+\def\printdateextralabel{\printlabeldateextra}
+
+% Bib settings
+\usepackage[backend=biber,
+natbib=true,
+%sorting=none,
+bibstyle=biblatex-sp-unified,
+citestyle=sp-authoryear-comp]{biblatex}
+
+\newcommand{\cit}[1]{{\tiny #1}}
+
+% Insert your bib file name here.
+\bibliography{yourbibfile}
+
+% Get rid of stupid beamer reference garbage like paper icon, and set text to black.
+\setbeamertemplate{bibliography item}{}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+
+
+% Custom Packages
+\usepackage{subcaption}
+
+\usepackage{eurosym}
+\usepackage{dcolumn}
+         
+\usepackage[T1]{fontenc}
+\usepackage{tipa}
+\usepackage{vowel}
+%	\usepackage{pst-vowel}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{textcomp}
+%	\usepackage{tikz-qtree}
+\usepackage{tabto}
+\usepackage{setspace}
+\usepackage{wasysym}
+\usepackage{amsmath}
+\usepackage{arydshln}
+\usepackage{rotating}
+\usepackage{multimedia}
+%\usepackage{linguex}
+\usepackage[normalem]{ulem}
+\usepackage{xfrac}
+\usepackage{booktabs}
+
+% IPA-related commands
+%
+\newcommand{\ipa}[1]{\textipa{#1}}
+\newcommand{\palj}{\super{j}}
+\newcommand{\asp}{\ipa{\super{h}}}
+\newcommand{\ej}{\ipa{\super{P}}}
+\newcommand{\unre}{\textcorner}
+\newcommand{\er}{@\textrhoticity}
+\newcommand{\Er}{3\textrhoticity}
+\newcommand{\darkl}{\textsuperimposetilde{l}}
+\newcommand{\beltl}{\textbeltl}
+% Also \*l
+\newcommand{\paln}{\textltailn}
+% Also \*n
+
+% Phono-related example formatting commands
+%
+\newcommand{\Rank}[2]{{\sc #1} $\gg$ {\sc #2}}
+\newcommand{\RankHG}[2]{\emph{w}({\sc #1}) $>$ \emph{w}({\sc #2})}
+\newcommand{\w}[1]{\emph{w}({\sc #1})}
+%\newcommand{\pdata}[2]{\textipa{[ #1 ]} & {`#2'}}
+\newcommand{\UR}[1]{\textipa{/#1/}}
+\newcommand{\SR}[1]{\textipa{[#1]}}
+\newcommand{\IR}[1]{\textipa{$\vert$ #1 $\vert$}}
+\newcommand{\spe}[3]{\ipa{#1} \rar \ipa{#2} / \ipa{#3} }
+\newcommand{\rar}{$\rightarrow$~}
+%\newcommand{\fder}[2]{\Fmat{#1} \rar \Fmat{#2}}
+\newcommand{\F}[1]{{\sc [#1]}}
+\newcommand{\foc}{\underline{~~~}}
+\newcommand{\Fmat}[1]{$\left[\begin{array}{c}#1\end{array}\right]$}
+\newcommand{\angbr}[1]{$\langle$#1$\rangle$}
+\newcommand{\disjunct}[1]{$\left\{\begin{array}{c}#1\end{array}\right\}$}
+
+\newcommand{\nrm}[1]{\textnormal{#1}}
+
+\newcommand{\skipline}{\vspace{\baselineskip}}
+\newcommand{\newL}{\skipline\noindent}
+\newcommand{\flag}[1]{{\red{\textbf{#1}}}}
+
+\newcommand{\citepos}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+
+
+\newcommand{\smc}[1]{{\rmfamily{\textsc{#1}}}}
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+  
+\addtobeamertemplate{frametitle}{\vskip0ex}{}
+%\setbeamertemplate{frametitle}{%
+%    \nointerlineskip%
+%    \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+%        \insertframetitle%
+%    \end{beamercolorbox}%
+%}
+
+
+\begin{document}
+\definecolor{Grey}{rgb}{0.8, 0.25, 0.33}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{burgundy}{rgb}{0.5, 0.0, 0.13}
+\definecolor{carnelian}{rgb}{0.7, 0.11, 0.11}
+\definecolor{carmine}{rgb}{0.59, 0.0, 0.09}
+\newcommand{\newemph}[1]{{\color{carmine}{{#1}}}}
+\frame{
+  \titlepage
+}
+
+
+
+
+% \begin{frame}
+% \tableofcontents[ 
+% % currentsubsection, 
+% hideallsubsections, 
+% sectionstyle=show
+% %, 
+% %subsectionstyle=shaded, 
+% ] 
+% \end{frame}
+
+% A flagging system for comments
+\newcommand{\flagKT}[1]{{\color{blue}{\textbf{#1}}}}
+
+\frame{
+\frametitle{Outline}
+\tableofcontents[ 
+%currentsubsection, 
+hideallsubsections, 
+sectionstyle=show
+%, 
+%subsectionstyle=shaded, 
+] 
+}
+
+\section{Demo section}
+
+\begin{frame}{Demo: Slide title with citations}
+\begin{itemize}
+\item Normal citation \citep{TangShaw_2021_ProsodyCognition}
+\item Mini citation \cit{\citep{TangShaw_2021_ProsodyCognition}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Demo: Slide title with one figure}
+\includegraphics[width=0.7\linewidth]{images/WAG.png}\\
+\end{frame}
+
+
+\begin{frame}{Demo: Slide with two figures}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=0.7\linewidth]{images/WAG.png}
+  \caption{Caption for figure 1}
+\end{subfigure}%
+\centering
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=0.7\linewidth]{images/WAG.png}
+  \caption{Caption for figure 2}
+\end{subfigure}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Demo: Slide title with special emphasis}
+\begin{itemize}
+\item Emphasis \newemph{Hello}
+\end{itemize}
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+\end{frame}
+
+\section{Method}
+\begin{frame}{Method}
+\end{frame}
+
+\section{Results}
+\begin{frame}{Results}
+\end{frame}
+
+\section{Discussion}
+\begin{frame}{Discussion}
+\end{frame}
+
+\section{Conclusions}
+\begin{frame}{Conclusions}
+\end{frame}
+
+
+
+\end{document}
