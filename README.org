@@ -1,4 +1,8 @@
 ** Slide template
 LaTeX slide template of the SLAM_LAB at HHU.
 
+** Usage:
+Tested on Overleaf
+It only works with XeLaTeX compiler 
+
 
